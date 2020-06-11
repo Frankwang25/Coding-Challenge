@@ -80,7 +80,7 @@ public class MessageController {
    */
     @RequestMapping(value = "/api/message/messages", method = RequestMethod.POST)
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<MessageModel> createProduct(@RequestBody MessageModel msg) {
+    public List<MessageModel> createMessage(@RequestBody MessageModel msg) {
         List<MessageModel> messages=new ArrayList<MessageModel>();
         MessageModel[] mmArray=JsonFileUtility.readJsonFile();
         messages.add(msg); 
@@ -115,7 +115,7 @@ public class MessageController {
    */
     @RequestMapping(value = "/api/message/messages/{id}", method = RequestMethod.PUT)
     @CrossOrigin(origins = "http://localhost:3000")
-    public String updateProduct(@PathVariable("id") Long id, @RequestBody MessageModel msg) { 
+    public String updateMessage(@PathVariable("id") Long id, @RequestBody MessageModel msg) { 
         List<MessageModel> messages=Arrays.asList(JsonFileUtility.readJsonFile());
         List<MessageModel> newMessages = new ArrayList<MessageModel>();
         //Long updatedId = Long.parseLong(id);
